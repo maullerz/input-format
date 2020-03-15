@@ -5,7 +5,7 @@ pages:
   - npm install
   - npm run build
   - mv ./bundle ./public
-  - cp ./website/* ./public/
+  - cp --recursive ./website/* ./public/
 
   artifacts:
     paths:
