@@ -5,11 +5,11 @@ let globalVariableName
 switch (process.env.WEBPACK_BUNDLE_TYPE) {
   case 'default':
     inputFileName = 'index.commonjs'
-    globalVariableName = 'input-format'
+    globalVariableName = 'InputFormat'
     break
   case 'react':
     inputFileName = 'react/index.commonjs'
-    globalVariableName = 'FormattedInput'
+    globalVariableName = 'InputFormat'
     break
 }
 
