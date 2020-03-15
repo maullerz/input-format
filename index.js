@@ -12,12 +12,6 @@ from './modules/template formatter'
 
 export
 {
-	default as ReactInput
-}
-from './modules/ReactInput'
-
-export
-{
 	default as parseDigit
 }
 from './modules/parse digit'
