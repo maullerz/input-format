@@ -3,6 +3,10 @@
 
   * Changed CDN bundle global variable names (`input-format` -> `InputFormat`, `FormattedInput` -> `InputFormat`).
 
+  * Removed `ReactInput` export from the default export. Import from `/react` subpackage instead.
+
+  * `ReactInput` uses React Hooks now.
+
 0.2.0 / 17.01.2018
 ==================
 
