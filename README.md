@@ -86,14 +86,12 @@ import { ReactInput } from 'input-format'
 Low-level Input Component API:
 
 ```js
-import
-{
+import {
   onChange,
   onCut,
   onPaste,
   onKeyDown
-}
-from 'input-format'
+} from 'input-format'
 
 const input = document.querySelector('input')
 
@@ -109,22 +107,17 @@ Core API:
 import { parse, format } from 'input-format'
 
 // Input character parser for `parse()`.
-function _parse(character, value)
-{
-  if (value.length < 10)
-  {
-    if (character >= '0' && character <= '9')
-    {
+function _parse(character, value) {
+  if (value.length < 10) {
+    if (character >= '0' && character <= '9') {
       return character
     }
   }
 }
 
 // Output text formatter for `format()`.
-function _format(value)
-{
+function _format(value) {
   ...
-
   // Just as an example of a return value
   return {
     text: '(800) 555-3535',
@@ -153,9 +146,11 @@ value === '(800) 555-3535'
 caret === 4
 ```
 
+<!--
 ## Android
 
 There have been some [reports](https://github.com/catamphetamine/input-format/issues/2) of some Android devices not positioning the caret correctly. A workaround has been added for that. In case of any issues with Android devices, report them to the aforementioned issue.
+-->
 
 ## Contributing
 
