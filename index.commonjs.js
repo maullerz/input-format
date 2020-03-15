@@ -2,7 +2,6 @@
 
 exports = module.exports = {}
 
-exports.ReactInput        = require('./commonjs/ReactInput').default
 exports.templateParser    = require('./commonjs/template parser').default
 exports.templateFormatter = require('./commonjs/template formatter').default
 exports.parseDigit        = require('./commonjs/parse digit').default
