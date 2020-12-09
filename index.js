@@ -31,8 +31,11 @@ from './modules/format'
 export
 {
 	onChange,
+	onKeyDown,
+
+	// Deprecated.
+	// I don't know why these functions exist.
 	onPaste,
-	onCut,
-	onKeyDown
+	onCut
 }
 from './modules/input control'

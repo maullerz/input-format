@@ -88,16 +88,12 @@ Low-level Input Component API:
 ```js
 import {
   onChange,
-  onCut,
-  onPaste,
   onKeyDown
 } from 'input-format'
 
 const input = document.querySelector('input')
 
  onChange(event, input, parse, format, onChangeHandler)
-    onCut(event, input, parse, format, onChangeHandler)
-  onPaste(event, input, parse, format, onChangeHandler)
 onKeyDown(event, input, parse, format, onChangeHandler)
 ```
 

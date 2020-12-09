@@ -5,8 +5,6 @@ import PropTypes from 'prop-types'
 
 import {
 	onChange as onInputChange,
-	onCut as onInputCut,
-	onPaste as onInputPaste,
 	onKeyDown as onInputKeyDown
 } from '../input control'
 
@@ -24,8 +22,6 @@ function Input({
 	format,
 	inputComponent: InputComponent,
 	onChange,
-	onCut,
-	onPaste,
 	onKeyDown,
 	...rest
 }, ref) {
@@ -40,32 +36,6 @@ function Input({
 			onChange
 		)
 	}, [ref, parse, format, onChange])
-
-	const _onPaste = useCallback((event) => {
-		if (onPaste) {
-			onPaste(event)
-		}
-		return onInputPaste(
-			event,
-			ref.current,
-			parse,
-			format,
-			onChange
-		)
-	}, [ref, parse, format, onChange, onPaste])
-
-	const _onCut = useCallback((event) => {
-		if (onCut) {
-			onCut(event)
-		}
-		return onInputCut(
-			event,
-			ref.current,
-			parse,
-			format,
-			onChange
-		)
-	}, [ref, parse, format, onChange, onCut])
 
 	const _onKeyDown = useCallback((event) => {
 		if (onKeyDown) {
@@ -86,9 +56,7 @@ function Input({
 			ref={ref}
 			value={format(isEmptyValue(value) ? '' : value).text}
 			onKeyDown={_onKeyDown}
-			onChange={_onChange}
-			onPaste={_onPaste}
-			onCut={_onCut} />
+			onChange={_onChange}/>
 	)
 }
 
