@@ -1,3 +1,8 @@
+0.3.2 / 26.12.2020
+==================
+
+  * [Renamed](https://gitlab.com/catamphetamine/input-format/-/issues/2) all filenames with spaces to camelCase.
+
 0.3.0 / 15.03.2020
 ==================
 

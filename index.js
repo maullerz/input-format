@@ -2,19 +2,19 @@ export
 {
 	default as templateParser
 }
-from './modules/template parser'
+from './modules/templateParser'
 
 export
 {
 	default as templateFormatter
 }
-from './modules/template formatter'
+from './modules/templateFormatter'
 
 export
 {
 	default as parseDigit
 }
-from './modules/parse digit'
+from './modules/parseDigit'
 
 export
 {
@@ -38,4 +38,4 @@ export
 	onPaste,
 	onCut
 }
-from './modules/input control'
+from './modules/inputControl'

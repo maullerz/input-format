@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import {
 	onChange as onInputChange,
 	onKeyDown as onInputKeyDown
-} from '../input control'
+} from '../inputControl'
 
 // Usage:
 //
