@@ -25,17 +25,22 @@ function Input({
 	onKeyDown,
 	...rest
 }, ref) {
-	const ownRef = useRef()
-	ref = ref || ownRef
+	const internalRef = useRef();
+	const setRef = useCallback((instance) => {
+		internalRef.current = instance;
+		if (ref) {
+			ref.current = instance;
+		}
+	}, []);
 	const _onChange = useCallback((event) => {
 		return onInputChange(
 			event,
-			ref.current,
+			internalRef.current,
 			parse,
 			format,
 			onChange
 		)
-	}, [ref, parse, format, onChange])
+	}, [internalRef, parse, format, onChange])
 
 	const _onKeyDown = useCallback((event) => {
 		if (onKeyDown) {
@@ -43,17 +48,17 @@ function Input({
 		}
 		return onInputKeyDown(
 			event,
-			ref.current,
+			internalRef.current,
 			parse,
 			format,
 			onChange
 		)
-	}, [ref, parse, format, onChange, onKeyDown])
+	}, [internalRef, parse, format, onChange, onKeyDown])
 
 	return (
 		<InputComponent
 			{...rest}
-			ref={ref}
+			ref={setRef}
 			value={format(isEmptyValue(value) ? '' : value).text}
 			onKeyDown={_onKeyDown}
 			onChange={_onChange}/>
