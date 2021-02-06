@@ -28,8 +28,10 @@ function Input({
 	const internalRef = useRef();
 	const setRef = useCallback((instance) => {
 		internalRef.current = instance;
-		if (ref) {
-			ref.current = instance;
+		if (typeof ref === 'function') {
+			ref(instance)
+		} else {
+			ref.current = instance
 		}
 	}, []);
 	const _onChange = useCallback((event) => {
