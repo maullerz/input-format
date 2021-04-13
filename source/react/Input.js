@@ -35,7 +35,7 @@ function Input({
 				ref.current = instance
 			}
 		}
-	}, []);
+	}, [ref]);
 	const _onChange = useCallback((event) => {
 		return onInputChange(
 			event,
