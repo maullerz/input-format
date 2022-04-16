@@ -10,12 +10,7 @@ import {
 
 type InputComponent<InputComponentProps> = (props: InputComponentProps) => JSX.Element;
 
-// export type DefaultInputComponentProps = React.InputHTMLAttributes<HTMLInputElement>
-// Precise TypeScript "typings" turned out to be too complex to figure out,
-// so it just allows any property that a hypothetical custom `inputComponent` could accept.
-export type DefaultInputComponentProps = {
-	[anyProperty: string]: any;
-}
+type DefaultInputComponentProps = React.InputHTMLAttributes<HTMLInputElement>
 
 type Props<InputComponentProps> = InputComponentProps & {
 	value?: string;

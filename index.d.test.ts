@@ -8,8 +8,8 @@ export interface FormatFunctionResult {
 	template: string;
 }
 
-export type ParseFunction = (character: string, value: string): ParseFunctionResult;
-export type FormatFunction = (value?: string): FormatFunctionResult;
+export type ParseFunction = (character: string, value: string) => ParseFunctionResult;
+export type FormatFunction = (value?: string) => FormatFunctionResult;
 
 export interface ExportedParseFunctionResult {
 	value: string;
