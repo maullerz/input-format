@@ -16,15 +16,15 @@ import
 }
 from '../index.js'
 
-const Library = require('../index.commonjs.js')
+import Library from '../index.cjs'
 
-const ReactInputLibrary = require('../react/index.commonjs.js')
+import ReactInputLibrary from '../react/index.cjs'
 
 describe(`exports`, function()
 {
 	it(`should export ES6`, function()
 	{
-		expect(ReactInput.default.render).to.be.a('function')
+		expect(ReactInput.render).to.be.a('function')
 
 		templateParser('')
 		templateFormatter('')

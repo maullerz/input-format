@@ -6,7 +6,7 @@ import * as React from 'react';
 import {
 	ParseFunction,
 	FormatFunction
-} from '../index.d.test';
+} from '../index.d';
 
 type InputComponent<InputComponentProps> = (props: InputComponentProps) => JSX.Element;
 

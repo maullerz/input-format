@@ -2,8 +2,22 @@
   "name": "input-format",
   "version": "0.3.7",
   "description": "Formatting user's text input on-the-fly",
-  "main": "index.commonjs.js",
+  "main": "index.cjs",
   "module": "index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js",
+      "require": "./index.cjs"
+    },
+    "./react": {
+      "types": "./react/index.d.ts",
+      "import": "./react/index.js",
+      "require": "./react/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
   "sideEffects": false,
   "dependencies": {
     "prop-types": "^15.8.1"
@@ -30,14 +44,16 @@
     "sinon": "^14.0.0"
   },
   "scripts": {
-    "test": "mocha --require @babel/register --colors --bail --reporter spec --require ./test/setup.js \"./{,!(node_modules|commonjs|modules)/**/}*.test.js\"  --recursive",
+    "test": "node --experimental-json-modules node_modules/mocha/bin/_mocha --bail --require ./test/setup.js \"source/**/*.test.js\" \"test/**/*.test.js\"",
     "test-coverage": "istanbul cover -x \"source/ReactInput.js\" -x \"locale/**\" -x \"commonjs/**\" -x \"modules/**\" -x \"*.test.js\" node_modules/mocha/bin/_mocha -- --require babel-core/register --colors --reporter dot --require ./test/setup.js \"./{,!(node_modules|commonjs|modules)/**/}*.test.js\" --recursive",
     "test-travis": "istanbul cover -x \"source/ReactInput.js\" -x \"locale/**\" -x \"commonjs/**\" -x \"modules/**\" -x \"*.test.js\" node_modules/mocha/bin/_mocha --report lcovonly -- --require babel-core/register --colors --reporter spec --require ./test/setup.js \"./{,!(node_modules|commonjs|modules)/**/}*.test.js\" --recursive",
-    "browser-build": "rollup --config rollup.config.js",
+    "browser-build": "rollup --config rollup.config.mjs",
     "clean-for-build": "rimraf ./commonjs/**/* ./modules/**/*",
+    "build-commonjs": "npm-run-all build-commonjs-modules build-commonjs-package.json",
+    "build-commonjs-package.json": "node runnable/create-commonjs-package-json.js",
     "build-commonjs-modules": "cross-env BABEL_ENV=commonjs babel ./source --out-dir ./commonjs --source-maps",
     "build-es6-modules": "cross-env BABEL_ENV=es6 babel ./source --out-dir ./modules --source-maps",
-    "build": "npm-run-all clean-for-build build-commonjs-modules build-es6-modules browser-build",
+    "build": "npm-run-all clean-for-build build-commonjs build-es6-modules browser-build",
     "prepublishOnly": "npm-run-all build test"
   },
   "repository": {
