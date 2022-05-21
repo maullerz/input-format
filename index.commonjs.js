@@ -2,18 +2,18 @@
 
 exports = module.exports = {}
 
-exports.templateParser    = require('./commonjs/templateParser').default
-exports.templateFormatter = require('./commonjs/templateFormatter').default
-exports.parseDigit        = require('./commonjs/parseDigit').default
-exports.parse             = require('./commonjs/parse').default
-exports.format            = require('./commonjs/format').default
+exports.templateParser    = require('./commonjs/templateParser.js').default
+exports.templateFormatter = require('./commonjs/templateFormatter.js').default
+exports.parseDigit        = require('./commonjs/parseDigit.js').default
+exports.parse             = require('./commonjs/parse.js').default
+exports.format            = require('./commonjs/format.js').default
 
 // Deprecated.
 // I don't know why these functions exist.
-exports.onChange       = require('./commonjs/inputControl').onChange
-exports.onPaste        = require('./commonjs/inputControl').onPaste
+exports.onChange       = require('./commonjs/inputControl.js').onChange
+exports.onPaste        = require('./commonjs/inputControl.js').onPaste
 
-exports.onCut          = require('./commonjs/inputControl').onCut
-exports.onKeyDown      = require('./commonjs/inputControl').onKeyDown
+exports.onCut          = require('./commonjs/inputControl.js').onCut
+exports.onKeyDown      = require('./commonjs/inputControl.js').onKeyDown
 
 // exports['default'] = ...
