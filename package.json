@@ -11,7 +11,7 @@
       "import": "./index.js",
       "require": "./index.cjs"
     },
-    "./react": {
+    "./react-input": {
       "types": "./react-input/index.d.ts",
       "import": "./react-input/index.js",
       "require": "./react-input/index.cjs"
