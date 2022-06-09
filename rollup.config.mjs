@@ -16,7 +16,7 @@ export default [
     }
   },
   {
-    input: 'react/index',
+    input: 'react-input/index',
     plugins: [
       json(),
       terser()

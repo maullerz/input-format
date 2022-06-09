@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ReactInput from '../react/index.js'
+import ReactInput from '../react-input/index.js'
 
 import
 {
@@ -18,7 +18,7 @@ from '../index.js'
 
 import Library from '../index.cjs'
 
-import ReactInputLibrary from '../react/index.cjs'
+import ReactInputLibrary from '../react-input/index.cjs'
 
 describe(`exports`, function()
 {
