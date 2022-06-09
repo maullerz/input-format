@@ -27,7 +27,7 @@ npm-debug.log
 
 # webpack build target folder
 # /modules/
-/commonjs/
+# /commonjs/
 
 # browser builds
 /bundle/
